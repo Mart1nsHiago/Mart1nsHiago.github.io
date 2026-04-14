@@ -311,7 +311,7 @@ section {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
@@ -374,6 +374,7 @@ section {
 
 .skill-fill.blue { background: var(--accent2); }
 .skill-fill.red { background: var(--accent3); }
+.skill-fill.purple { background: #b058ff; } /* Nova cor para Desenvolvimento */
 
 /* ── TIMELINE ── */
 .timeline {
