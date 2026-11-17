@@ -620,3 +620,37 @@ body.no-motion *,body.no-motion *::before,body.no-motion *::after{animation-dura
   .eyebrow{font-size:9px}
   .gesture-table{font-size:8.5px}
 }
+
+/* Project illustration framing on phones: give the human silhouette enough
+   vertical room and keep the payment caption clear of the booking mockup. */
+@media(max-width:720px){
+  .project-visual.visual-epi{height:348px}
+  .visual-epi .epi-human{left:50%;top:7%;transform:translateX(-50%)}
+  .visual-epi .bounding-box{
+    left:50%;top:7%;width:126px;height:88%;
+    transform:translateX(-50%);
+  }
+  .visual-epi .bounding-box>span:first-child{top:-16px;font-size:9px;padding:2px 5px}
+  .visual-epi .epi-data{left:4%;bottom:9%;font-size:9px}
+
+  .project-visual.visual-barber{height:340px}
+  .visual-barber .barber-brand{top:17px;left:18px;font-size:clamp(25px,6.8vw,31px)}
+  .visual-barber .booking-card{
+    top:72px;left:50%;right:auto;
+    transform:translateX(-50%);
+    width:min(270px,calc(100% - 42px));
+  }
+  .visual-barber .payment-stamp{
+    top:auto;bottom:15px;left:18px;
+    font-size:10px;white-space:nowrap;z-index:2;
+  }
+}
+@media(max-width:360px){
+  .project-visual.visual-barber{height:326px}
+  .visual-barber .booking-card{top:66px;padding:11px 12px}
+  .visual-barber .payment-stamp{bottom:12px;font-size:9px}
+  .project-visual.visual-epi{height:328px}
+  .visual-epi .epi-human{top:6%;transform:translateX(-50%) scale(.93);transform-origin:top center}
+  .visual-epi .bounding-box{top:6%;height:88%;width:118px}
+  .visual-epi .epi-data{font-size:8px}
+}
