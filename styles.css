@@ -10,6 +10,11 @@ button:focus-visible,a:focus-visible{outline:3px solid #0f83c7;outline-offset:3p
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 button{color:inherit;-webkit-appearance:none;appearance:none}
 .menu-toggle,.case-link,.filter,.gesture-toggle{color:var(--ink)}
+/* Draw small northeast arrows as vectors: iOS otherwise renders ↗ as emoji. */
+.ne-arrow{display:inline-block;position:relative;width:12px;height:12px;flex:0 0 12px;margin-left:3px;vertical-align:-1px;color:inherit}
+.ne-arrow::before{content:"";position:absolute;top:1px;right:1px;width:7px;height:7px;border-top:1.7px solid currentColor;border-right:1.7px solid currentColor}
+.ne-arrow::after{content:"";position:absolute;left:1px;bottom:1px;width:13px;height:1.7px;background:currentColor;transform:rotate(-45deg);transform-origin:left center}
+.tono-art>b .ne-arrow{transform:scale(1.6)}
 .skip-link{position:absolute;top:-100px;left:12px;padding:9px 16px;background:var(--yellow);z-index:999}
 .skip-link:focus{top:10px}
 .page-container{width:min(1480px,calc(100% - 112px));margin:auto}
