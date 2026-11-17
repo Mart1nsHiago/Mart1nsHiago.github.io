@@ -1,468 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hiago Martins — DevOps · Full Stack Developer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f6f2">
+  <meta name="description" content="Hiago Martins — desenvolvedor Full Stack. Projetos em React, TypeScript, Python, Node.js, automação e visão computacional.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hiago Martins — Full Stack Developer">
+  <meta property="og:description" content="Do código ao ambiente de produção. Projetos, experiência e tecnologia aplicada.">
+  <title>Hiago Martins — Desenvolvedor Full Stack</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">HM.DEV</div>
-  <ul class="nav-links">
-    <li><a href="#about">Sobre</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experiência</a></li>
-    <li><a href="#projects">Projetos</a></li>
-    <li><a href="#certs">Certs</a></li>
-  </ul>
-  <a href="mailto:hiagomartins55@hotmail.com" class="nav-cta">Contato</a>
-</nav>
-
-<!-- HERO -->
-<section id="hero" style="padding-top:8rem; padding-bottom:4rem; max-width:none; margin:0;">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
-
-  <div style="position:relative; max-width:1200px; margin:0 auto;">
-    <div class="hero-tag fade-in visible">
-      <span class="status-dot">Disponível para projetos</span>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <div class="grid-cursor" id="gridCursor" aria-hidden="true"><span class="grid-cursor-cross">+</span><span class="grid-cursor-cell" id="cursorCell">A1</span><span class="grid-cursor-coords" id="cursorCoords">X 0000 Y 0000</span></div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Hiago Martins, início"><span class="brand-symbol">H<span class="brand-slash">/</span>M</span><span>HIAGO MARTINS</span></a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a><a href="#projetos">Projetos</a><a href="#competencias">Competências</a><a href="#experiencia">Experiência</a><a href="#sobre">Sobre</a>
+      <a class="nav-contact" href="#contato">Contato <span aria-hidden="true">↗</span></a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" id="motionToggle" class="icon-toggle" aria-label="Reduzir animações" title="Pausar animações">✳</button>
+      <button type="button" id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="mobileNav">MENU <span aria-hidden="true">☰</span></button>
     </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navegação mobile" hidden>
+      <a href="#inicio">Início</a><a href="#projetos">Projetos</a><a href="#competencias">Competências</a><a href="#experiencia">Experiência</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-    <h1 class="hero-name fade-in visible" style="transition-delay:0.1s;">
-      Hiago<br><span>Martins</span>
-    </h1>
-
-    <p class="hero-role fade-in visible" style="transition-delay:0.2s;">
-      DevOps · <span> Network Security</span> · Full Stack Developer
-    </p>
-
-    <p class="hero-desc fade-in visible" style="transition-delay:0.3s;">
-      Profissional em infraestrutura crítica, segurança de redes e desenvolvimento web Full Stack. Administro ambientes corporativos complexos (Sophos Firewall, Proxmox e VPNs), aliando essa base sólida de SysAdmin à programação (Python, JavaScript, Node.js e APIs) para automatizar processos e otimizar operações de TI.
-    </p>
-
-    <div class="hero-actions fade-in visible" style="transition-delay:0.4s;">
-      <a href="#projects" class="btn-primary">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        Ver projetos
-      </a>
-      <a href="https://www.linkedin.com/in/hiago-martins" target="_blank" class="btn-secondary">
-        LinkedIn ↗
-      </a>
-    </div>
-  </div>
-
-  <div class="hero-scroll">SCROLL</div>
-</section>
-
-<hr class="divider">
-
-<!-- ABOUT -->
-<div id="about-wrap" style="background: var(--bg2);">
-<section id="about">
-  <div class="about-text fade-in">
-    <div class="section-label">Sobre mim</div>
-    
-    <img src="perfil.jpg" alt="Foto Hiago Martins" class="foto-perfil">
-    
-    <h2 class="section-title" style="margin-bottom:1.5rem;">Desenvolvimento<br>& DevOps.</h2>
-    <p>
-      Com mais de <strong>3 anos de experiência prática</strong> possuo uma base sólida em administração de servidores e segurança de redes. Hoje, direciono essa expertise para o ecossistema DevOps e Desenvolvimento Full Stack, criando arquiteturas escaláveis e automatizando operações.
-    </p>
-    <p>
-      Minha trajetória passou por setores como <strong>saúde, tecnologia e segurança de redes</strong>, sempre com foco em
-      alta disponibilidade, segmentação de redes e resposta a incidentes.
-    </p>
-    <p>
-  Certificado como <strong>Sophos Engineer</strong> e graduando em <strong>Análise e Desenvolvimento de Sistemas</strong> (IESB), consolido minha expertise entregando soluções completas que vão do código ao firewall.
-</p>
-  </div>
-
-  <div class="about-stats fade-in fade-in-delay-2">
-    <div class="stat-card">
-      <div class="stat-number">3+</div>
-      <div class="stat-label">Anos de experiência</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">5</div>
-      <div class="stat-label">Certificações</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">65</div>
-      <div class="stat-label">Empresas atendidas</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">2600+</div>
-      <div class="stat-label">Incidentes resolvidos</div>
-    </div>
-  </div>
-</section>
-</div>
-
-<hr class="divider">
-
-<!-- SKILLS -->
-<section id="skills" style="max-width:1200px; margin:0 auto; padding:6rem 3rem;">
-  <div class="section-label fade-in">Stack técnico</div>
-  <h2 class="section-title fade-in">Habilidades</h2>
-
-  <div class="skills-grid">
-    <!-- Firewalls -->
-    <div class="skill-category fade-in">
-      <div class="skill-cat-title">Firewalls &amp; Redes</div>
-
-      <div class="skill-item">
-        <div class="skill-name"><span>Sophos Firewall</span><span>Sólido</span></div>
-        <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>pfSense</span><span>Avançado</span></div>
-        <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>VPNs (IPSec / OpenVPN)</span><span>Avançado</span></div>
-        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>SD-WAN / NAT / VLANs</span><span>Avançado</span></div>
-        <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>IPS / Web Filtering / App Control</span><span>Sólido</span></div>
-        <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
-      </div>
-    </div>
-
-    <!-- Virtualização -->
-    <div class="skill-category fade-in fade-in-delay-1">
-      <div class="skill-cat-title">Virtualização</div>
-
-      <div class="skill-item">
-        <div class="skill-name"><span>Proxmox (KVM / LXC)</span><span>Sólido</span></div>
-        <div class="skill-bar"><div class="skill-fill blue" data-width="72"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Hyper-V</span><span>Avançado</span></div>
-        <div class="skill-bar"><div class="skill-fill blue" data-width="90"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>ZFS / LVM / NFS / iSCSI</span><span>Sólido</span></div>
-        <div class="skill-bar"><div class="skill-fill blue" data-width="72"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Alta disponibilidade (HA)</span><span>Sólido</span></div>
-        <div class="skill-bar"><div class="skill-fill blue" data-width="72"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Backup &amp; Snapshots</span><span>Sólido</span></div>
-        <div class="skill-bar"><div class="skill-fill blue" data-width="72"></div></div>
-      </div>
-    </div>
-
-    <!-- Sistemas -->
-    <div class="skill-category fade-in fade-in-delay-2">
-      <div class="skill-cat-title">Sistemas Operacionais</div>
-
-      <div class="skill-item">
-        <div class="skill-name"><span>Windows Server (AD/DNS/DHCP/GPO)</span><span>Avançado</span></div>
-        <div class="skill-bar"><div class="skill-fill red" data-width="90"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Linux (Ubuntu / Debian / CentOS)</span><span>Sólido</span></div>
-        <div class="skill-bar"><div class="skill-fill red" data-width="72"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Shell Script / Automação</span><span>Intermediário</span></div>
-        <div class="skill-bar"><div class="skill-fill red" data-width="70"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Sophos Endpoint Protection</span><span>Sólido</span></div>
-        <div class="skill-bar"><div class="skill-fill red" data-width="72"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Análise de logs / SIEM</span><span>Intermediário</span></div>
-        <div class="skill-bar"><div class="skill-fill red" data-width="70"></div></div>
-      </div>
-    </div>
-    <div class="skill-category fade-in fade-in-delay-3">
-      <div class="skill-cat-title">Desenvolvimento & Automação</div>
-
-      <div class="skill-item">
-        <div class="skill-name"><span>Python (Scripts / Automação)</span><span>Intermediário</span></div>
-        <div class="skill-bar"><div class="skill-fill purple" data-width="70"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>JavaScript / Node.js</span><span>Intermediário</span></div>
-        <div class="skill-bar"><div class="skill-fill purple" data-width="70"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Integração de APIs (REST)</span><span>Sólido</span></div>
-        <div class="skill-bar"><div class="skill-fill purple" data-width="72"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>HTML5 & CSS3</span><span>Sólido</span></div>
-        <div class="skill-bar"><div class="skill-fill purple" data-width="72"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Git & GitHub</span><span>Sólido</span></div>
-        <div class="skill-bar"><div class="skill-fill purple" data-width="72"></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- EXPERIENCE -->
-<div style="background: var(--bg2);">
-<section id="experience" style="max-width:1200px; margin:0 auto; padding:6rem 3rem;">
-  <div class="section-label fade-in">Trajetória</div>
-  <h2 class="section-title fade-in">Experiência<br>Profissional</h2>
-
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="timeline-dot active"></div>
-      <div class="timeline-period">Jan 2026 — Atual</div>
-      <div class="timeline-role">Network Security</div>
-      <div class="timeline-company">SdRedes — Segurança de Redes</div>
-      <div class="timeline-desc">
-        Administração de Sophos Firewall com configuração de políticas de segurança, NAT, SD-WAN,
-        Web Filtering, Application Control e IPS. Implementação e manutenção de VPNs IPSec Site-to-Site
-        para interligação de filiais. Gerenciamento de ambientes Proxmox e Hyper-V com foco em segurança
-        de rede. Análise de logs e mitigação preventiva de incidentes.
-      </div>
-      <div class="timeline-tags">
-        <span class="tag">Sophos</span>
-        <span class="tag">IPSec VPN</span>
-        <span class="tag">SD-WAN</span>
-        <span class="tag">Proxmox</span>
-        <span class="tag">Hyper-V</span>
-        <span class="tag">IPS</span>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-period">Out 2024 — Jan 2026</div>
-      <div class="timeline-role">Analista de Infraestrutura N2</div>
-      <div class="timeline-company">Control Tecnologia</div>
-      <div class="timeline-desc">
-        Administração completa de ambientes de TI com Windows Server (AD DS, DNS, DHCP, GPO, File Server)
-        e Linux. Configuração e manutenção de pfSense com VLANs, VPNs e captive portal. Execução de
-        projetos de virtualização, backup e recuperação de desastres. Documentação técnica e
-        implementação de boas práticas de segurança.
-      </div>
-      <div class="timeline-tags">
-        <span class="tag">pfSense</span>
-        <span class="tag">Windows Server</span>
-        <span class="tag">Linux</span>
-        <span class="tag">Active Directory</span>
-        <span class="tag">OpenVPN</span>
-        <span class="tag">VLANs</span>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-period">Fev 2023 — Mai 2024</div>
-      <div class="timeline-role">Suporte Técnico</div>
-      <div class="timeline-company">Tivolly Medicina Integrada</div>
-      <div class="timeline-desc">
-        Suporte e administração de sistemas em ambiente hospitalar. Configuração e manutenção de
-        servidores Windows Server e Linux. Suporte em Hyper-V e Proxmox para gerenciamento de VMs.
-        Atendimento de chamados N1, troubleshooting e rotinas de backup.
-      </div>
-      <div class="timeline-tags">
-        <span class="tag">Hyper-V</span>
-        <span class="tag">Proxmox</span>
-        <span class="tag">pfSense</span>
-        <span class="tag">Suporte N1</span>
-        <span class="tag">Backup</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-</div>
-
-<hr class="divider">
-
-<!-- PROJECTS -->
-<section id="projects" style="max-width:1200px; margin:0 auto; padding:6rem 3rem;">
-  <div class="section-label fade-in">Implementações</div>
-  <h2 class="section-title fade-in">Projetos<br>Práticos</h2>
-
-  <div class="projects-grid">
-
-    <div class="project-card fade-in">
-      <div class="project-num">01 / VIRTUALIZAÇÃO</div>
-      <div class="project-title">Android Multi-Instância em Proxmox</div>
-      <div class="project-desc">
-        Implementação de ambiente Android-x86 rodando em máquinas virtuais Proxmox para automação
-        de aplicativos de mensagens em escala. Configuração de recursos de GPU passthrough,
-        rede virtualizada e snapshots automatizados.
-      </div>
-      <div class="project-tech">
-        <span class="tech-badge">Proxmox KVM</span>
-        <span class="tech-badge">Android-x86</span>
-        <span class="tech-badge">GPU Passthrough</span>
-        <span class="tech-badge">Automação</span>
-      </div>
-    </div>
-
-    <div class="project-card fade-in fade-in-delay-1">
-      <div class="project-num">02 / CLOUD &amp; BACKUP</div>
-      <div class="project-title">Sincronização e Backup com Rclone + Nextcloud</div>
-      <div class="project-desc">
-        Estruturação de sistema de sincronização e backup em nuvem integrando Rclone ao Nextcloud.
-        Automação de rotinas de backup via shell script com logs de auditoria, criptografia end-to-end
-        e redundância entre múltiplos destinos de armazenamento.
-      </div>
-      <div class="project-tech">
-        <span class="tech-badge">Nextcloud</span>
-        <span class="tech-badge">Rclone</span>
-        <span class="tech-badge">Shell Script</span>
-        <span class="tech-badge">Linux</span>
-      </div>
-    </div>
-
-    <div class="project-card fade-in fade-in-delay-2">
-      <div class="project-num">03 / SEGURANÇA</div>
-      <div class="project-title">Auditoria e Hardening Automatizado com Python</div>
-      <div class="project-desc">
-        Desenvolvimento de ferramentas em Python para auditoria de segurança em ambientes Linux e Windows. Automação da verificação de portas expostas, serviços ativos, permissões de arquivos, usuários privilegiados, atualizações de segurança e geração de relatórios técnicos.
-      </div>
-      <div class="project-tech">
-        <span class="tech-badge">Cybersecurity</span>
-        <span class="tech-badge">Python</span>
-        <span class="tech-badge">Automação</span>
-        <span class="tech-badge">Linux</span>
-        <span class="tech-badge">Windows</span>
-      </div>
-    </div>
-
-    <div class="project-card fade-in fade-in-delay-3">
-      <div class="project-num">04 / FULL STACK</div>
-      <div class="project-title">Sistema Barber Com Gateway de Pagamentos</div>
-      <div class="project-desc">
-        Desenvolvimento web Full Stack de um sistema completo para barbearia. 
-        Criação de interface de usuário (Frontend) conectada a uma API REST robusta (Backend) estruturada em JavaScript/Node.js, com foco em rotas seguras e manipulação de dados.
-      </div>
-      <div class="project-tech">
-        <span class="tech-badge">JavaScript</span>
-        <span class="tech-badge">Node.js</span>
-        <span class="tech-badge">HTML/CSS</span>
-        <span class="tech-badge">API REST</span>
-        <span class="tech-badge">Full Stack</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- CERTS -->
-<div style="background: var(--bg2);">
-<section id="certs" style="max-width:1200px; margin:0 auto; padding:6rem 3rem;">
-  <div class="section-label fade-in">Qualificações</div>
-  <h2 class="section-title fade-in">Certificações</h2>
-
-  <div class="certs-grid">
-
-    <div class="cert-card fade-in">
-      <div class="cert-icon">🛡️</div>
-      <div>
-        <div class="cert-title">Sophos Firewall v22.0 — Engineer</div>
-        <div class="cert-org">SOPHOS · CERTIFICADO OFICIAL</div>
-        <div class="cert-desc">
-          Configuração avançada de firewall corporativo, NAT, políticas de segurança, VPNs IPSec/SSL,
-          Web Filtering, Application Control, IPS e SD-WAN em ambientes de produção.
+  <main id="main">
+    <section class="hero grid-paper" id="inicio" aria-labelledby="hero-title">
+      <canvas class="data-rain" id="dataRain" aria-hidden="true"></canvas>
+      <div class="sheet-letters" id="sheetLetters" aria-hidden="true"></div>
+      <div class="row-gutter" id="rowGutter" aria-hidden="true"></div>
+      <div class="hero-inner page-container">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="square-dot"></span> CYBERSECURITY · FULL STACK · DEVSECOPS</div>
+          <h1 id="hero-title">HIAGO<br><span>MARTINS<span class="headline-period">.</span></span></h1>
+          <p class="role-line"><span class="formula-equals">=</span> <span id="roleType" aria-label="Desenvolvedor Full Stack">DESENVOLVEDOR FULL STACK</span><span class="cursor" aria-hidden="true"></span></p>
+          <p class="hero-intro">Desenvolvo aplicações Full Stack, automações e soluções de visão computacional com <strong>React, TypeScript, Python, Node.js e APIs REST</strong>. Minha base em segurança e infraestrutura conecta o código à operação.</p>
+          <div class="hero-cta">
+            <a class="button button-yellow" href="#projetos">Explorar projetos <span aria-hidden="true">↗</span></a>
+            <a class="button button-green" href="./hiago-martins-curriculo.pdf" download>Baixar currículo <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-highlights" aria-label="Destaques profissionais">
+            <span><strong>03+</strong> anos em tecnologia</span><span><strong>09</strong> projetos selecionados</span><span><strong>02</strong> certificações Sophos</span>
+          </div>
+          <div class="hero-local"><span class="line-rule"></span><p>VALPARAÍSO DE GOIÁS · BRASIL <span class="sep">/</span> <span id="brasilTime">UTC−3</span><br><span class="muted">Formado em ADS · IESB · Disponível para conversar sobre oportunidades</span></p></div>
+          <div class="terminal-mini" aria-label="Prévia de console de desenvolvimento">
+            <div class="terminal-top"><span>hiago@dev ~/portfolio</span><span class="terminal-dots">● ● ●</span></div>
+            <div class="terminal-body"><p><span class="term-prompt">❯</span> npm run build<span class="term-ghost"> --portfolio</span></p><p class="term-success">✓ Projetos, código e aprendizado em evolução.</p><p><span class="term-prompt">❯</span> <span class="blink-block">▌</span></p></div>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="sheet-formula"><span class="range-box">HM:DEV</span><span class="fx">ƒx</span><span>=CODAR("ideias"; "soluções")</span><span class="formula-tail">↗</span></div>
+          <div class="portrait-frame">
+            <img src="https://mart1nshiago.github.io/perfil.jpg" alt="Fotografia de Hiago Martins" loading="eager" onerror="this.style.display='none';this.parentElement.classList.add('image-unavailable')">
+            <span class="portrait-placeholder" aria-hidden="true">HM<span>.</span></span>
+            <span class="frame-corner frame-corner-tl"></span><span class="frame-corner frame-corner-br"></span>
+            <span class="photo-label">FIG 01. / HIAGO MARTINS</span>
+          </div>
+          <div class="stack-label">STACK / EM CONSTANTE EVOLUÇÃO</div>
+          <div class="skill-bars" aria-label="Principais tecnologias"><div class="skill-bar yellow"><span>◈</span><strong>JAVASCRIPT / TYPESCRIPT</strong><small>WEB</small></div><div class="skill-bar cyan"><span>⌘</span><strong>REACT / NODE.JS</strong><small>FULL STACK</small></div><div class="skill-bar green"><span>✳</span><strong>PYTHON / OPENCV</strong><small>IA & AUTOMAÇÃO</small></div><div class="skill-bar orange"><span>◆</span><strong>LINUX / GIT / APIs</strong><small>ENGENHARIA</small></div></div>
+          <div class="social-grid" aria-label="Contato e redes sociais">
+            <a class="social-pill whatsapp" href="https://wa.me/5561995203082" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.3a9.7 9.7 0 0 0-8.3 14.8L2.6 21.5l4.5-1.1A9.7 9.7 0 1 0 12 2.3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.2 7.7c-.4-.5-.8-.4-1.1-.1-1.4 1.5.1 4 2.2 6.2 2.1 2.2 4.8 3.3 6.3 2.2.3-.3.8-1.2.4-1.6l-1.9-.9c-.3-.1-.5 0-.7.2l-.9 1c-1.5-.6-2.8-1.8-3.5-3.4l.9-.8c.2-.2.3-.4.1-.7l-.8-1.9Z" fill="currentColor"/></svg><span>WhatsApp</span></a>
+            <a class="social-pill linkedin" href="https://www.linkedin.com/in/hiago-martins/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="1.4" fill="currentColor"/><path d="M6.9 10v8M6.9 6.8v.1M11 18v-8h3.2v1.2c.4-.9 1.1-1.5 2.5-1.5 2.2 0 2.5 1.5 2.5 3.5V18" fill="none" stroke="#0e62b3" stroke-width="2"/></svg><span>LinkedIn</span></a>
+            <a class="social-pill github" href="https://github.com/Mart1nsHiago" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .8a11.2 11.2 0 0 0-3.5 21.85c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.8-1.33-3.8-1.33-.5-1.26-1.24-1.6-1.24-1.6-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.15 1.72 1.15 1.01 1.72 2.65 1.22 3.3.94.1-.73.39-1.23.7-1.52-2.5-.29-5.12-1.25-5.12-5.56 0-1.23.44-2.24 1.15-3.03-.12-.28-.5-1.43.11-2.98 0 0 .94-.3 3.08 1.16a10.8 10.8 0 0 1 5.6 0c2.14-1.45 3.08-1.16 3.08-1.16.61 1.55.23 2.7.11 2.98.72.79 1.15 1.8 1.15 3.03 0 4.33-2.63 5.27-5.14 5.55.4.35.75 1.03.75 2.09v3.11c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"/></svg><span>GitHub</span></a>
+            <a class="social-pill email" href="mailto:hiagomartins55@hotmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.2" y="4.5" width="19.6" height="15" rx="1.8" fill="currentColor"/><path d="m3 6 9 7 9-7" fill="none" stroke="#f75a0a" stroke-width="2"/></svg><span>E-mail</span></a>
+          </div>
         </div>
       </div>
-      <span class="cert-badge">✓ Ativo</span>
-    </div>
-
-    <div class="cert-card fade-in fade-in-delay-1">
-      <div class="cert-icon">🛡️</div>
-      <div>
-        <div class="cert-title">Sophos Endpoint v6.0 — Engineer</div>
-        <div class="cert-org">SOPHOS · CERTIFICADO OFICIAL</div>
-        <div class="cert-desc">
-          Implementação e administração do Sophos Endpoint Protection. Proteção contra malware, ransomware
-          e ameaças avançadas. Gerenciamento centralizado via Sophos Central com resposta a incidentes.
+      <section class="gesture-lab page-container" id="gesto" aria-labelledby="gestureTitle">
+        <div class="gesture-topline"><span>GESTO PARA PLANILHA / 21 PONTOS</span><span>EXPERIMENTO INTERATIVO · SEM CÂMERA</span></div>
+        <div class="gesture-layout">
+          <div class="gesture-visual"><canvas id="handPose" width="450" height="345" role="img" aria-label="Esqueleto animado de mão com 21 pontos. Mova o mouse sobre a figura para guiar o gesto."></canvas><span class="gesture-visual-note">MOVA O PONTEIRO PARA GUIAR A MÃO ↗</span></div>
+          <div class="gesture-data"><div class="gesture-table" role="table" aria-label="Coordenadas dos dedos"><div class="gesture-table-header" role="row"><span>PONTO</span><span>CÉLULA</span><span>X</span><span>Y</span><span>ESTADO</span></div><div id="gestureRows"></div></div><div class="gesture-state"><small>GESTO DA POSE</small><strong id="gestureLabel">MÃO ABERTA</strong><small id="gestureFrame">QUADRO 00000 / 16,7 MS POR QUADRO</small><p>Esqueleto com a topologia de 21 pontos do MediaPipe Hands. A pose é simulada e animada, sem acesso à câmera. Passe o mouse para acompanhar os movimentos.</p></div></div>
         </div>
-      </div>
-      <span class="cert-badge">✓ Ativo</span>
-    </div>
+        <button class="gesture-toggle" id="gestureToggle" type="button" aria-pressed="false">PAUSAR ANIMAÇÃO</button>
+      </section>
+      <div class="hero-bottom-note"><span>SCROLL PARA EXPLORAR</span><span>PORTFÓLIO / 2026</span></div>
+    </section>
 
-    <div class="cert-card fade-in fade-in-delay-2">
-      <div class="cert-icon">🎓</div>
-      <div>
-        <div class="cert-title">Análise e Desenvolvimento de Sistemas</div>
-        <div class="cert-org">IESB · TECNÓLOGO EM ANDAMENTO</div>
-        <div class="cert-desc">
-          Formação tecnológica com previsão de conclusão em Agosto/2026. Complementando
-          a expertise técnica em infraestrutura com fundamentos de desenvolvimento de software
-          e sistemas de informação.
+    <section class="section projects-section" id="projetos" aria-labelledby="projects-title">
+      <div class="page-container">
+        <div class="section-heading"><div><p class="kicker">01 / TRABALHOS SELECIONADOS</p><h2 id="projects-title">PROJETOS <span>EM CÓDIGO.</span></h2></div><p>Do desenvolvimento web à visão computacional. Cada projeto nasce de um problema e evolui com prototipação, testes e implementação.</p></div>
+        <div class="project-toolbar"><div class="toolbar-left"><span class="toolbar-cell">A1:I9</span><strong>PROJETOS_FILTRADOS</strong><span class="toolbar-count" id="projectCount">09 registros</span></div><div class="filters" role="group" aria-label="Filtrar projetos"><button class="filter active" data-filter="todos" aria-pressed="true">Todos</button><button class="filter" data-filter="web" aria-pressed="false">Web</button><button class="filter" data-filter="visao" aria-pressed="false">Visão computacional</button><button class="filter" data-filter="automacao" aria-pressed="false">Automação</button></div></div>
+        <div class="project-grid" id="projectGrid">
+          <article class="project-card" data-category="web visao" data-project="katana">
+            <div class="project-visual visual-katana"><div class="visual-head"><span>01 / INTERATIVO</span><span>● GITHUB</span></div><div class="katana-stage"><div class="katana-orbit o1"></div><div class="katana-orbit o2"></div><span class="katana-character">斬</span><span class="katana-cut"></span><span class="katana-label">DUAL HAND TRACKING</span><div class="reticle r1">+</div><div class="reticle r2">+</div></div><div class="visual-foot"><span>CAMERA → MEDIAPIPE → CANVAS</span><span>▲</span></div></div>
+            <div class="project-body"><div class="project-category"><span class="status-dot"></span> JOGO WEB / VISÃO COMPUTACIONAL <span class="project-number">001</span></div><h3>Katana Motion</h3><p class="project-lead">Jogo de cortes por gestos, com webcam e rastreamento simultâneo das duas mãos.</p><div class="case-lines"><p><strong>DESAFIO</strong> Tornar movimentos reais uma interação fluida no navegador.</p><p><strong>SOLUÇÃO</strong> React, MediaPipe Hands e Canvas para reconhecer gestos e executar cortes.</p></div><div class="tag-list"><span>React</span><span>TypeScript</span><span>MediaPipe</span><span>Canvas</span></div><div class="project-links"><button class="case-link" data-open-project="katana">Ver estudo de caso ↗</button><a href="https://github.com/Mart1nsHiago/katana-motion" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+          </article>
+          <article class="project-card" data-category="visao automacao" data-project="epi">
+            <div class="project-visual visual-epi"><div class="visual-head"><span>02 / COMPUTER VISION</span><span>● EM DESENVOLVIMENTO</span></div><div class="epi-stage"><div class="epi-human"><div class="helmet"></div><div class="human-head"></div><div class="human-body"></div><div class="human-legs"></div></div><div class="bounding-box"><span>EPIs DETECTADOS</span><span class="bb-corner"></span></div><div class="epi-data"><p>model: YOLO</p><p>stream: RTSP</p><p class="green-text">status: análise</p></div><div class="scanline"></div></div><div class="visual-foot"><span>VISION PIPELINE / PYTHON</span><span>◇</span></div></div>
+            <div class="project-body"><div class="project-category"><span class="status-dot amber"></span> IA / SEGURANÇA DO TRABALHO <span class="project-number">002</span></div><h3>EPI Detect</h3><p class="project-lead">Sistema de análise de vídeo para identificação de EPIs e uniformes em imagens de câmeras.</p><div class="case-lines"><p><strong>DESAFIO</strong> Analisar imagens em tempo real para apoiar verificações de segurança.</p><p><strong>SOLUÇÃO</strong> Pipeline com Python, YOLO/Ultralytics, OpenCV, Flask e streams RTSP/MJPEG do UniFi Protect.</p></div><div class="tag-list"><span>Python</span><span>YOLO</span><span>OpenCV</span><span>Flask</span></div><div class="project-links"><button class="case-link" data-open-project="epi">Ver estudo de caso ↗</button><span class="project-state">EM EVOLUÇÃO</span></div></div>
+          </article>
+          <article class="project-card" data-category="web" data-project="elite">
+            <div class="project-visual visual-elite"><div class="visual-head"><span>03 / WEB SYSTEM</span><span>● IMPLEMENTADO</span></div><div class="bid-stage"><div class="bid-top"><span>ELITE / LEILÕES</span><span>LEILÃO ATIVO</span></div><div class="bid-number">R$ 18.450<span>,00</span></div><div class="bid-history"><span>BRUNO <strong>+ R$ 250</strong></span><span>ANA <strong>+ R$ 200</strong></span><span>MARINA <strong>+ R$ 300</strong></span></div><div class="bid-progress"><span></span></div></div><div class="visual-foot"><span>CONCORRÊNCIA / AUDITORIA / UI</span><span>◉</span></div></div>
+            <div class="project-body"><div class="project-category"><span class="status-dot"></span> PLATAFORMA WEB <span class="project-number">003</span></div><h3>Elite Leilões</h3><p class="project-lead">Fluxo de leilão com usuários concorrentes, simulação de lances e auditoria de eventos.</p><div class="case-lines"><p><strong>DESAFIO</strong> Coordenar disputas de lance sem perder a rastreabilidade.</p><p><strong>SOLUÇÃO</strong> Testes de concorrência e validação de lances com múltiplos perfis.</p></div><div class="tag-list"><span>JavaScript</span><span>Web</span><span>Testes</span><span>Auditoria</span></div><div class="project-links"><button class="case-link" data-open-project="elite">Ver estudo de caso ↗</button></div></div>
+          </article>
+          <article class="project-card" data-category="web" data-project="barber">
+            <div class="project-visual visual-barber"><div class="visual-head"><span>04 / FULL STACK</span><span>● SOLUÇÃO WEB</span></div><div class="barber-stage"><div class="barber-brand">BARBER<span> / </span>SYSTEM</div><div class="booking-card"><span>AGENDAMENTO</span><strong>Escolha um horário</strong><div class="date-row"><span>SEG<br>09</span><span class="selected">TER<br>10</span><span>QUA<br>11</span><span>QUI<br>12</span></div><div class="time-slots"><span>09:00</span><span class="selected">10:30</span><span>14:00</span></div></div><div class="payment-stamp">API / PAGAMENTO ↗</div></div><div class="visual-foot"><span>FRONTEND ↔ API REST</span><span>✂</span></div></div>
+            <div class="project-body"><div class="project-category"><span class="status-dot"></span> PRODUTO / FULL STACK <span class="project-number">004</span></div><h3>Sistema Barber</h3><p class="project-lead">Aplicação para barbearia com interface, regras de negócio e integração de pagamentos.</p><div class="case-lines"><p><strong>DESAFIO</strong> Conectar a experiência de agendamento à lógica do sistema.</p><p><strong>SOLUÇÃO</strong> Frontend JavaScript e backend Node.js com rotas de API REST.</p></div><div class="tag-list"><span>JavaScript</span><span>Node.js</span><span>API REST</span><span>HTML / CSS</span></div><div class="project-links"><button class="case-link" data-open-project="barber">Ver estudo de caso ↗</button></div></div>
+          </article>
+          <article class="project-card compact-project" data-category="web" data-project="tono"><div class="compact-art tono-art"><span>TONO<span>FLASH</span></span><small>FOTOGRAFIA · PLATAFORMA</small><b>↗</b></div><div class="project-body"><div class="project-category"><span class="status-dot amber"></span> PLATAFORMA WEB / EM EVOLUÇÃO <span class="project-number">005</span></div><h3>TonoFlash</h3><p class="project-lead">Experiência digital para fotografia de eventos, descoberta de imagens e cadastro de fotógrafos.</p><div class="tag-list"><span>Web</span><span>UX/UI</span><span>Plataforma</span></div><div class="project-links"><button class="case-link" data-open-project="tono">Ver detalhes ↗</button></div></div></article>
+          <article class="project-card compact-project" data-category="automacao" data-project="audit"><div class="compact-art audit-art"><span class="code-head">AUDIT.EXEC / PYTHON</span><div><p><em>✓</em> checking open ports</p><p><em>✓</em> reviewing services</p><p><em>✓</em> verifying permissions</p><p><em>_</em> generating report...</p></div><b>●</b></div><div class="project-body"><div class="project-category"><span class="status-dot"></span> PYTHON / CYBERSECURITY <span class="project-number">006</span></div><h3>Auditoria & Hardening</h3><p class="project-lead">Scripts de auditoria para identificar configurações e serviços que exigem atenção.</p><div class="tag-list"><span>Python</span><span>Linux</span><span>Windows</span><span>Automação</span></div><div class="project-links"><button class="case-link" data-open-project="audit">Ver detalhes ↗</button></div></div></article>
+          <article class="project-card" data-category="web" data-project="taurus">
+            <div class="project-visual visual-taurus"><div class="visual-head"><span>07 / WEB EXPERIENCE</span><span>● WEBSITE</span></div><div class="taurus-stage"><div class="taurus-website"><div class="taurus-topbar"><span class="taurus-symbol">♉</span><span>TAURUS</span><span>SERVIÇOS&nbsp;&nbsp; SOBRE&nbsp;&nbsp; CONTATO</span></div><div class="taurus-wordmark"><small>ESTILO, IDENTIDADE & PRESENÇA DIGITAL</small><strong>TAURUS<br><em>BARBEARIA.</em></strong><span class="taurus-illustrated-link">CONHECER O ESPAÇO ↗</span></div><div class="taurus-stripe"></div></div></div><div class="visual-foot"><span>IDENTIDADE / WEB / RESPONSIVIDADE</span><span>♉</span></div></div>
+            <div class="project-body"><div class="project-category"><span class="status-dot"></span> WEBSITE / PRESENÇA DIGITAL <span class="project-number">007</span></div><h3>Taurus Barbearia</h3><p class="project-lead">Projeto web para apresentação digital de uma barbearia, valorizando identidade visual e comunicação com clientes.</p><div class="case-lines"><p><strong>DESAFIO</strong> Levar a identidade do estabelecimento para uma presença digital clara.</p><p><strong>SOLUÇÃO</strong> Interface web com foco em apresentação de serviços, visual e navegação.</p></div><div class="tag-list"><span>Web</span><span>UI/UX</span><span>Responsividade</span></div><div class="project-links"><button class="case-link" data-open-project="taurus">Ver estudo de caso ↗</button><a href="https://taurusbarbearia.com/" target="_blank" rel="noopener noreferrer">Visitar site ↗</a></div></div>
+          </article>
+          <article class="project-card" data-category="automacao" data-project="backup">
+            <div class="project-visual visual-backup"><div class="visual-head"><span>08 / CLOUD & AUTOMATION</span><span>● INFRA</span></div><div class="backup-stage"><div class="backup-flow"><div class="backup-node"><div class="backup-server"><span></span><span></span><span></span></div><strong>SERVIDOR</strong><small>ORIGEM / LINUX</small></div><div class="backup-connection"><b>⟷</b><span>RCLONE</span></div><div class="backup-node cloud-node"><div class="backup-cloud">☁</div><strong>NEXTCLOUD</strong><small>DESTINO / NUVEM</small></div></div><div class="backup-console"><span><b>✓</b> arquivos sincronizados</span><span>logs · criptografia · redundância</span></div></div><div class="visual-foot"><span>SHELL SCRIPT / BACKUP / RCLONE</span><span>↻</span></div></div>
+            <div class="project-body"><div class="project-category"><span class="status-dot"></span> AUTOMAÇÃO / BACKUP <span class="project-number">008</span></div><h3>Rclone + Nextcloud</h3><p class="project-lead">Rotinas automatizadas de sincronização e backup em nuvem, com registros e redundância de armazenamento.</p><div class="case-lines"><p><strong>DESAFIO</strong> Reduzir tarefas manuais e apoiar a confiabilidade dos backups.</p><p><strong>SOLUÇÃO</strong> Integração Rclone e Nextcloud com Shell Script, logs e criptografia.</p></div><div class="tag-list"><span>Linux</span><span>Rclone</span><span>Nextcloud</span><span>Shell Script</span></div><div class="project-links"><button class="case-link" data-open-project="backup">Ver estudo de caso ↗</button></div></div>
+          </article>
+          <article class="project-card" data-category="automacao" data-project="android">
+            <div class="project-visual visual-android"><div class="visual-head"><span>09 / VIRTUALIZATION LAB</span><span>● PROXMOX</span></div><div class="android-stage"><div class="android-dashboard-top"><span>PROXMOX / VIRTUAL MACHINES</span><span>● INSTÂNCIAS</span></div><div class="android-machines"><div class="android-device"><div class="android-notch"></div><div class="android-icon-grid"><i></i><i></i><i></i><i></i></div><span>VM 01</span></div><div class="android-device"><div class="android-notch"></div><div class="android-icon-grid"><i></i><i></i><i></i><i></i></div><span>VM 02</span></div><div class="android-device"><div class="android-notch"></div><div class="android-icon-grid"><i></i><i></i><i></i><i></i></div><span>VM 03</span></div></div><div class="android-console">KVM&nbsp; / &nbsp;ANDROID-X86&nbsp; / &nbsp;SNAPSHOTS</div></div><div class="visual-foot"><span>AMBIENTE MULTI-VM / AUTOMAÇÃO</span><span>⬡</span></div></div>
+            <div class="project-body"><div class="project-category"><span class="status-dot"></span> VIRTUALIZAÇÃO / LABORATÓRIO <span class="project-number">009</span></div><h3>Android Multi-Instância</h3><p class="project-lead">Ambiente Android-x86 virtualizado com múltiplas instâncias em Proxmox para experimentos de automação.</p><div class="case-lines"><p><strong>DESAFIO</strong> Executar instâncias Android com isolamento e controle de recursos.</p><p><strong>SOLUÇÃO</strong> Proxmox/KVM, rede virtualizada, snapshots e dimensionamento das VMs.</p></div><div class="tag-list"><span>Proxmox</span><span>KVM</span><span>Android-x86</span><span>VMs</span></div><div class="project-links"><button class="case-link" data-open-project="android">Ver estudo de caso ↗</button></div></div>
+          </article>
         </div>
+        <p class="project-disclaimer">As interfaces acima são ilustrações conceituais dos projetos. Funcionalidades e estágios de desenvolvimento são descritos em cada case.</p>
       </div>
-      <span class="cert-badge">Em curso</span>
-    </div>
+    </section>
 
-    <div class="cert-card fade-in fade-in-delay-3">
-      <div class="cert-icon">🌐</div>
-      <div>
-        <div class="cert-title">Inglês Técnico — Intermediário</div>
-        <div class="cert-org">LEITURA E ESCRITA TÉCNICA</div>
-        <div class="cert-desc">
-          Capacidade de leitura e interpretação de documentação técnica, RFCs, artigos de segurança
-          e manuais em inglês.
-        </div>
-      </div>
-      <span class="cert-badge">B2</span>
-    </div>
+    <section class="section evidence-section grid-paper" id="competencias" aria-labelledby="skills-title"><div class="page-container"><div class="section-heading"><div><p class="kicker">02 / CONHECIMENTO APLICADO</p><h2 id="skills-title">STACK COM <span>EVIDÊNCIAS.</span></h2></div><p>Tecnologias que utilizo para transformar requisitos em soluções. Cada uma conectada ao que já construí ou administrei.</p></div><div class="skills-table" role="list"><div class="skill-row" role="listitem"><span class="skill-index">01</span><div><strong>React & TypeScript</strong><small>FRONTEND</small></div><p>Interfaces interativas, componentes, tipagem e fluxo de estados.</p><span class="evidence-pill">Katana Motion</span></div><div class="skill-row" role="listitem"><span class="skill-index">02</span><div><strong>JavaScript & Node.js</strong><small>FULL STACK</small></div><p>Aplicações web, rotas, integração de serviços e APIs REST.</p><span class="evidence-pill">Sistema Barber</span></div><div class="skill-row" role="listitem"><span class="skill-index">03</span><div><strong>Python & Automação</strong><small>BACKEND / SCRIPTS</small></div><p>Scripts, diagnósticos, processamento e tarefas repetitivas.</p><span class="evidence-pill">Auditoria</span></div><div class="skill-row" role="listitem"><span class="skill-index">04</span><div><strong>YOLO & OpenCV</strong><small>VISÃO COMPUTACIONAL</small></div><p>Detecção visual e pipelines de análise de vídeo.</p><span class="evidence-pill">EPI Detect</span></div><div class="skill-row" role="listitem"><span class="skill-index">05</span><div><strong>Git & GitHub</strong><small>WORKFLOW</small></div><p>Versionamento de código, documentação e evolução de projetos.</p><span class="evidence-pill">Repositórios</span></div><div class="skill-row" role="listitem"><span class="skill-index">06</span><div><strong>Linux & Infraestrutura</strong><small>BASE OPERACIONAL</small></div><p>Ambientes virtuais, conectividade, segurança e troubleshooting.</p><span class="evidence-pill">SdRedes / Control</span></div></div><div class="stack-cloud"><span>HTML5</span><span>CSS3</span><span>Flask</span><span>MediaPipe</span><span>REST APIs</span><span>Shell Script</span><span>Proxmox</span><span>Hyper-V</span><span>Sophos</span><span>pfSense</span><span>Git</span></div></div></section>
 
-  </div>
-</section>
-</div>
+    <section class="section experience-section" id="experiencia" aria-labelledby="experience-title"><div class="page-container"><div class="section-heading"><div><p class="kicker">03 / PERCURSO PROFISSIONAL</p><h2 id="experience-title">EXPERIÊNCIA <span>QUE SOMA.</span></h2></div><p>Uma base construída em ambientes reais de tecnologia que hoje fortalece a forma como projeto e desenvolvo software.</p></div><div class="experience-layout"><div class="experience-summary"><span class="big-number">03<span>+</span></span><p>ANOS EM<br>TECNOLOGIA</p><div class="summary-tag">CÓDIGO + INFRAESTRUTURA</div><div class="progress-deco"><span></span><span></span><span></span><span></span><span></span></div></div><div class="timeline"><article class="timeline-item"><div class="timeline-date">JAN 2026 — ATUAL</div><div><div class="timeline-label">01 / ATUAL</div><h3>Analista de Redes Jr</h3><h4>SdRedes — Segurança de Redes</h4><p>Administração de firewalls Sophos, ambientes Proxmox/Hyper-V, VPNs e serviços corporativos. Troubleshooting de incidentes e análise de logs, aplicando uma visão de produção à construção de soluções.</p><div class="tag-list"><span>Sophos</span><span>Proxmox</span><span>VPN</span><span>SD-WAN</span></div></div></article><article class="timeline-item"><div class="timeline-date">OUT 2024 — JAN 2026</div><div><div class="timeline-label">02 / ANTERIOR</div><h3>Analista de Infraestrutura / N2</h3><h4>Control Tecnologia</h4><p>Atuação com Windows Server, Linux, Active Directory, DNS, DHCP, virtualização, redes e backup. Documentação técnica e resolução de problemas complexos em ambientes corporativos.</p><div class="tag-list"><span>Linux</span><span>Windows Server</span><span>pfSense</span><span>AD</span></div></div></article><article class="timeline-item"><div class="timeline-date">FEV 2023 — MAI 2024</div><div><div class="timeline-label">03 / BASE</div><h3>Suporte Técnico</h3><h4>Tivolly Medicina Integrada</h4><p>Suporte a usuários e administração de serviços, servidores, virtualização e rotinas de backup em ambiente corporativo da área de saúde.</p><div class="tag-list"><span>Suporte</span><span>Hyper-V</span><span>Linux</span><span>Backup</span></div></div></article></div></div></div></section>
 
-<hr class="divider">
+    <section class="section about-section grid-paper" id="sobre" aria-labelledby="about-title"><div class="page-container"><div class="section-heading"><div><p class="kicker">04 / SOBRE MIM</p><h2 id="about-title">ALÉM DO <span>CÓDIGO.</span></h2></div></div><div class="about-grid"><div class="about-story"><p class="about-lead">Sou Hiago Martins, desenvolvedor com uma trajetória que começou na infraestrutura e encontrou no desenvolvimento de software uma forma de criar soluções de ponta a ponta.</p><p>Minha bagagem em redes, segurança e servidores me ajuda a entender não só como escrever uma funcionalidade, mas como ela se comporta em um ambiente real. Hoje priorizo <strong>desenvolvimento Full Stack, backend e automação</strong>, aplicando práticas de Cybersecurity e DevSecOps.</p><p>Gosto de aprender construindo: de aplicações web e integrações a experimentos com gestos, detecção de objetos e processamento de vídeo em tempo real.</p><a class="text-arrow" href="./hiago-martins-curriculo.pdf" download>Currículo completo em PDF ↗</a></div><div class="qualification-panel"><div class="panel-title"><span>FORMAÇÃO & CREDENCIAIS</span><span>04 LINHAS</span></div><div class="qualification-row featured"><span>01</span><div><strong>Análise e Desenvolvimento de Sistemas</strong><small>IESB · TECNÓLOGO</small></div><span class="qual-status">CONCLUÍDO / NOV 2026</span></div><div class="qualification-row"><span>02</span><div><strong>Sophos Firewall v22 — Engineer</strong><small>CERTIFICAÇÃO TÉCNICA</small></div><span class="qual-badge">CERTIFICADO</span></div><div class="qualification-row"><span>03</span><div><strong>Sophos Endpoint v6 — Engineer</strong><small>CERTIFICAÇÃO TÉCNICA</small></div><span class="qual-badge">CERTIFICADO</span></div><div class="qualification-row"><span>04</span><div><strong>Inglês técnico</strong><small>LEITURA DE DOCUMENTAÇÃO</small></div><span class="qual-badge">INTERMEDIÁRIO</span></div><div class="panel-footer">// conhecimento aplicado, evolução contínua.</div></div></div></div></section>
 
-<!-- CONTACT -->
-<section id="contact" style="text-align:center; max-width:1200px; margin:0 auto; padding:7rem 3rem;">
-  <div class="section-label fade-in" style="justify-content:center;">Contato</div>
-  <h2 class="section-title fade-in" style="font-size:clamp(2rem,5vw,3.5rem);">Vamos<br>conversar?</h2>
-  <p class="contact-sub fade-in" style="font-size:1.05rem; color:var(--text2); max-width:460px; margin:0 auto 3rem; line-height:1.75;">
-    Aberto a oportunidades em desenvolvimento, segurança de redes e projetos de tecnologia.
-    Entre em contato por qualquer canal.
-  </p>
+    <section class="contact-section" id="contato" aria-labelledby="contact-title"><div class="page-container"><div class="contact-meta"><span>05 / PRÓXIMO PASSO</span><span><span class="live-dot"></span> VAMOS CONSTRUIR ALGO?</span></div><h2 id="contact-title">TEM UM PROJETO<br>EM MENTE<span>?</span></h2><p>Estou aberto a conversar sobre desenvolvimento web, oportunidades Full Stack, automação e projetos com tecnologia aplicada.</p><div class="contact-buttons"><a class="button button-dark" href="mailto:hiagomartins55@hotmail.com?subject=Contato%20pelo%20portfolio">Enviar um e-mail <span aria-hidden="true">↗</span></a><a class="button button-outline" href="https://wa.me/5561995203082" target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a></div><div class="contact-bottom"><a href="https://github.com/Mart1nsHiago" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="https://www.linkedin.com/in/hiago-martins/" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a><a href="mailto:hiagomartins55@hotmail.com">E-MAIL ↗</a><span>VALPARAÍSO DE GOIÁS / BR</span></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="page-container"><div><strong>H/M<span>.</span></strong><p>Hiago Martins da Costa · Desenvolvedor Full Stack<br>Projetado e desenvolvido com atenção aos detalhes.</p></div><div><span>© 2026 HIAGO MARTINS</span><a href="#inicio">VOLTAR AO TOPO ↑</a></div></div></footer>
 
-  <div class="contact-links fade-in">
-    <a href="mailto:hiagomartins55@hotmail.com" class="contact-link">
-      ✉ hiagomartins55@hotmail.com
-    </a>
-    <a href="https://wa.me/5561995203082" target="_blank" class="contact-link">
-      ☎ +55 (61) 99520-3082
-    </a>
-    <a href="https://www.linkedin.com/in/hiago-martins" target="_blank" class="contact-link">
-      in LinkedIn ↗
-    </a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-text">© 2026 · Hiago Martins da Costa ·</div>
-  <div class="footer-text">DevOps · Network Security · Full Stack Developer</div>
-</footer>
-
-<script src="js/script.js"></script>
+  <dialog id="caseDialog" class="case-dialog" aria-labelledby="caseTitle"><div class="dialog-shell"><div class="dialog-header"><span>CASE_DETAIL / <span id="caseIndex">001</span></span><button id="caseClose" aria-label="Fechar detalhes" type="button">FECHAR ×</button></div><div class="dialog-content"><p class="kicker" id="caseCategory"></p><h2 id="caseTitle"></h2><p class="dialog-intro" id="caseIntro"></p><div class="dialog-blocks"><div><span>O DESAFIO</span><p id="caseChallenge"></p></div><div><span>A ABORDAGEM</span><p id="caseApproach"></p></div><div><span>ESTADO ATUAL</span><p id="caseResult"></p></div></div><div class="tag-list" id="caseTech"></div><div class="dialog-actions" id="caseActions"></div></div></div></dialog>
 </body>
 </html>
