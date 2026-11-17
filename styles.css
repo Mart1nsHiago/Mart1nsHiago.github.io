@@ -575,3 +575,48 @@ body.no-motion *,body.no-motion *::before,body.no-motion *::after{animation-dura
   .experience-summary>p{font-size:14px}
   .gesture-table{font-size:9px}
 }
+
+/* Phone hero: reserve the spreadsheet row-number column as a real gutter.
+   Without this inset, the numbers sit on top of the name, copy and gesture lab. */
+@media(max-width:720px){
+  .hero{padding-top:33px}
+  .hero-inner.page-container,
+  .gesture-lab.page-container{padding-left:30px}
+  .hero-bottom-note{padding-left:30px}
+  .row-gutter{width:30px;background:rgba(246,246,242,.78)}
+  .hero-copy{padding-top:12px}
+  .hero h1{
+    font-size:clamp(42px,12vw,66px);
+    line-height:.94;
+    letter-spacing:-.075em;
+    margin:23px 0 20px;
+  }
+  .hero h1>span{white-space:nowrap}
+  .eyebrow{font-size:10px;letter-spacing:.02em;line-height:1.55;white-space:normal}
+  .role-line{margin:22px 0 22px;line-height:1.5;min-height:26px}
+  .hero-intro{font-size:15px;line-height:1.65;margin-bottom:23px;overflow-wrap:break-word}
+  .hero-cta{gap:10px}
+  .hero-cta .button{min-height:48px;padding:11px 14px;font-size:13px}
+  .hero-highlights{margin-top:23px;gap:5px;font-size:10px;line-height:1.45}
+  .hero-highlights span{padding-left:6px}
+  .hero-highlights strong{font-size:20px}
+  .hero-local{margin-top:25px;font-size:10px;line-height:1.75}
+  .hero-local .line-rule{width:100%}
+  .hero-side{padding:0}
+  .sheet-formula{font-size:9px}
+  .gesture-lab{margin-top:64px}
+  .gesture-topline{font-size:10px;line-height:1.55;letter-spacing:.025em}
+  .gesture-visual-note{font-size:9px;line-height:1.5}
+  .gesture-table{font-size:9px}
+  .gesture-table-header,.gesture-table-row{grid-template-columns:1.45fr .7fr .58fr .58fr 1.35fr;gap:3px;padding:6px 0}
+  .hero-bottom-note{font-size:9px;letter-spacing:.045em}
+}
+@media(max-width:360px){
+  .hero-inner.page-container,.gesture-lab.page-container{padding-left:26px}
+  .hero-bottom-note{padding-left:26px}
+  .hero h1{font-size:clamp(40px,11.6vw,44px)}
+  .hero-highlights strong{font-size:18px}
+  .hero-highlights{font-size:9px}
+  .eyebrow{font-size:9px}
+  .gesture-table{font-size:8.5px}
+}
